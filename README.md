@@ -10,6 +10,12 @@ git clone https://github.com/hartk1213/Waveshare2.8_Installation
 
 # Waveshare 2.8 Manual Installation with Klipperscreen 
 
+## Step 0
+Remove any previous installations of the Waveshare driver repos
+```
+rm -r -f Waveshare*
+```
+
 ## Step 1
 Clone Waveshare-DSI-LCD driver repo
 
@@ -33,7 +39,7 @@ pi@mainsailos:~/Waveshare-DSI-LCD $
 ```
 
 ## Step 2
-In the terminal find the kernel version and wheter your are on a 32bit or 64bit system and cd to the corresponding file directory
+In the terminal find the kernel version and whether your are on a 32bit or 64bit system and cd to the corresponding file directory
 in this example the version is 6.1.21 and its a 64bit system 
 
 command
@@ -97,14 +103,14 @@ command
 mkdir /usr/share/X11/xorg.conf.d/
 ```
 ```
-wget -P /usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
+sudo wget -P /usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
 ```
 
 terminal output
 ```console
 pi@mainsailos:~/Waveshare-DSI-LCD/6.1.21/64 $ mkdir /usr/share/X11/xorg.conf.d/
 mkdir: cannot create directory ‘/usr/share/X11/xorg.conf.d/’: File exists
-pi@mainsailos:~/Waveshare-DSI-LCD/6.1.21/64 $ wget -P ~/usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
+pi@mainsailos:~/Waveshare-DSI-LCD/6.1.21/64 $ sudo wget -P ~/usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
 --2024-05-15 06:25:16--  https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
@@ -120,12 +126,12 @@ pi@mainsailos:~/Waveshare-DSI-LCD/6.1.21/64 $
 ```
 
 ## Step 6
-After that file has been successfully downloaded now you need to edit the /boot/config.txt file to tell the pi which orientation to use the display in (i.e portrait, landscape etc..). 
+After that file has been successfully downloaded now you need to edit the /boot/firmware/config.txt file to tell the pi which orientation to use the display in (i.e portrait, landscape etc..). 
 
 
 command 
 ```
-sudo nano /boot/config.txt
+sudo nano /boot/firmware/config.txt
 ```
 To do this scroll all the way to the bottom of the file and replace
 
