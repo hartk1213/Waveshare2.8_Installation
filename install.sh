@@ -20,7 +20,7 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 #Step 0: Remove old versions of the Waveshare Drivers
-rm -r -f Waveshare*
+rm -r -f Waveshare-DSI-LCD*
 
 # Step 1: Clone Waveshare-DSI-LCD driver repo
 echo "Cloning Waveshare-DSI-LCD driver repository..."
